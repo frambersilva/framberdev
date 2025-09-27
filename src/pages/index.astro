@@ -14,7 +14,7 @@ import Layout from "../layouts/layout.astro";
 					const { title } = data;
 
 					return (
-						<h2>{title}</h2>
+						<a href={`/blog/${slug}`}><h2>{title}</h2></a>
 					)
 					
 				})
