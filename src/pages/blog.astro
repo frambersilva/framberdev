@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/layout.astro";
+
+import { getCollection } from "astro:content";
+const blogs = await getCollection("blog");	
+---
+
+<Layout title="Blog">
+  <h1>Entradas del blog</h1>
+
+  {
+				blogs.map(blog =>{
+					const { slug, data } = blog;
+					const { title } = data;
+
+					return (
+						<h2>{title}</h2>
+					)
+					
+				})
+			}
+</Layout>
