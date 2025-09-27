@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 const blogs = await getCollection("blog");	
 
 import Layout from "../layouts/layout.astro";
+import { BASE_URL } from '../consts';
 ---
 
 <Layout title="blog de ejemplo">
@@ -14,7 +15,7 @@ import Layout from "../layouts/layout.astro";
 					const { title } = data;
 
 					return (
-						<a href={`/blog/${slug}`}><h2>{title}</h2></a>
+						<a href={`{BASE_URL}/blog/${slug}`}><h2>{title}</h2></a>
 					)
 					
 				})
